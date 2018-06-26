@@ -57,7 +57,7 @@ class GoldRushTest < MiniTest::Test
   end
 
   # Verifies that the program aborts upon finding out there's an invalid input
-  # Edge Case
+  # EDGE CASE
   def test_no_arg
 	assert_output(nil, abort) {GoldRush.argchecker(-1)}
   end
@@ -79,7 +79,7 @@ class GoldRushTest < MiniTest::Test
   end
 
   # Verifies that calculate method returns the right amount of money if there's a negative value
-  # Edge Case
+  # EDGE CASE
   def test_calculate_negative
   	assert_equal '0', @gold_rush.calculate(-1, 0)
   end
@@ -99,7 +99,7 @@ class GoldRushTest < MiniTest::Test
   end
 
   # Verifies that location print method displays Error for a negative way value
-  # Edge Case
+  # EDGE CASE
   def test_print_location_negative_way
   	@gold_rush.initialize(2, 2)
   	assert_equal "Error", @gold_rush.print_location(@prospectors[0], -2)
@@ -111,7 +111,7 @@ class GoldRushTest < MiniTest::Test
   end
 
   # Verifies that the way generator returns Error for a negative value
-  # Edge Case
+  # EDGE CASE
   def test_way_generator
   	assert_equal "Error", @gold_rush.way_generator(-1)
   end
