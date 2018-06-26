@@ -344,16 +344,17 @@ class GoldRush
       puts "holding #{prospector.num_gold} ounces of gold and #{prospector.num_silver} ounces of silver."
       @current_location = @current_location.forward_path4
     else
-      puts "Error"
+      puts 'Error'
       abort
     end
-
   end
 
   def self.way_generator(num)
-    @way = @prng.rand(num)
-    if (num<0)
-      puts "Error"
+    if num >= 0
+      @way = @prng.rand(num)
+
+    else
+      puts 'Error'
       abort
     end
   end
@@ -373,10 +374,10 @@ class GoldRush
     check_current_location(prospector)
   end
 
-def self.calculate(gnum, snum)
-      total = gnum * 20.67 + snum * 1.31
-      total = (total * 100).round / 100.0
-end
+  def self.calculate(gnum, snum)
+    total = gnum * 20.67 + snum * 1.31
+    (total * 100).round / 100.0
+  end
 
   def self.run
     @prospectors.each do |prospector|
